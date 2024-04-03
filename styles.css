@@ -80,3 +80,7 @@ button:hover{
     opacity: 1;
     background-color:blueviolet;
 }
+
+#guessBox{
+    display: flex;
+}

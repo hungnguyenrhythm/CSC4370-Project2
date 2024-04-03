@@ -1,0 +1,15 @@
+he
+hi
+no
+be
+yes
+one
+two
+three
+hello
+easy
+php
+html
+css
+java
+react
