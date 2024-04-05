@@ -9,7 +9,7 @@
     <head>
         <title>Team 10 - Hangman Word Game</title>
         <meta charset="UTF-8">
-        <link rel="stylesheet" href="style.css">
+        <link rel="stylesheet" href="styles.css">
     </head>
     <body>
         <!-- Game Title -->
