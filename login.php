@@ -3,13 +3,20 @@
                 if ($_SERVER["REQUEST_METHOD"] == "POST") {
                     $username = $_POST["logInName"];
                     $password = $_POST["logInPassword"];
-                    if ($username == "Test" and $password == "1234") {
-                        $_SESSION["access"] = 1;
+                    $userList = file("./users.txt", FILE_IGNORE_NEW_LINES);
+                    $user = preg_grep("/"."^"."$username"."/", $userList);
+                    if (count($user) == 0) {
+                        echo "Username not found. Try again";
+                        $login = "\"login.php\"";
+                        echo "<a href=$login>Click here to go back to the login page.</a>";
+                        exit();
+                    }
+                    $index = array_keys($user)[0];
+                    $user = explode(",", $user[$index]);
+                    if ($username == $user[0] and $password == $user[1]) {
                         $_SESSION["username"] = $username;
-                        header('Location: main_menu.php');
-                        exit;
-                    } else {
-                        echo "Incorrect Password or Username";
+                        header("Location: menu.php");
+                        exit();
                     }
                 }
 ?>
