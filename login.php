@@ -1,5 +1,15 @@
 <?php
     session_start();
+        if ($_SERVER["REQUEST_METHOD"] == "GET") {
+            if (isset($_GET["signUpName"]) and isset($_GET["signUpPassword"])) {
+                $newName = $_GET["signUpName"];
+                $newPassword = $_GET["signUpPassword"];
+            }
+            $newUser = "\n$newName,$newPassword,0";
+            $file = fopen("users.txt", "a");
+            fwrite($file, $newUser);
+            fclose($file);
+        }
                 if ($_SERVER["REQUEST_METHOD"] == "POST") {
                     $username = $_POST["logInName"];
                     $password = $_POST["logInPassword"];

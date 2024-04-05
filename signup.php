@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html>
     <head>
@@ -12,7 +13,7 @@
         <div class="selection">
             <fieldset class="form">
                 <legend>Sign Up</legend>
-                <form method="get" action="./main_menu.php">
+                <form method="get" action="./login.php">
                     <label for="signUpName">Set your username:</label><br>
                     <input type="text" id="signUpName" name="signUpName" size="60"><br><br>
                     <label for="signUpPassword">Set your password:</label><br>
