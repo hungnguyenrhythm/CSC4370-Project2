@@ -4,11 +4,11 @@
             if (isset($_GET["signUpName"]) and isset($_GET["signUpPassword"])) {
                 $newName = $_GET["signUpName"];
                 $newPassword = $_GET["signUpPassword"];
+                $newUser = "\n$newName,$newPassword,0";
+                $file = fopen("users.txt", "a");
+                fwrite($file, $newUser);
+                fclose($file);
             }
-            $newUser = "\n$newName,$newPassword,0";
-            $file = fopen("users.txt", "a");
-            fwrite($file, $newUser);
-            fclose($file);
         }
                 if ($_SERVER["REQUEST_METHOD"] == "POST") {
                     $username = $_POST["logInName"];
@@ -25,7 +25,7 @@
                     $user = explode(",", $user[$index]);
                     if ($username == $user[0] and $password == $user[1]) {
                         $_SESSION["username"] = $username;
-                        header("Location: menu.php");
+                        header("Location: main_menu.php");
                         exit();
                     }
                 }
