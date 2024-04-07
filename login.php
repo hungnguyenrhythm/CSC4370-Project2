@@ -47,9 +47,9 @@
                 <legend>Login</legend>
                 <form method="post" action="login.php">
                     <label for="logInName">Enter your Username:</label><br>
-                    <input type="text" id="logInName" name="logInName" size="60"><br><br>
+                    <input type="text" id="logInName" name="logInName" size="60" required><br><br>
                     <label for="logInPassword">Enter your Password:</label><br>
-                    <input type="text" id="logInPassword" name="logInPassword" size="60"><br><br>
+                    <input type="text" id="logInPassword" name="logInPassword" size="60" required><br><br>
                     <input type="submit" value="Sign In">
                 </form>
             </fieldset>

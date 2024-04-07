@@ -15,9 +15,9 @@
                 <legend>Sign Up</legend>
                 <form method="get" action="./login.php">
                     <label for="signUpName">Set your username:</label><br>
-                    <input type="text" id="signUpName" name="signUpName" size="60"><br><br>
+                    <input type="text" id="signUpName" name="signUpName" size="60" required><br><br>
                     <label for="signUpPassword">Set your password:</label><br>
-                    <input type="text" id="signUpPassword" name="signUpPassword" size="60"><br><br>
+                    <input type="text" id="signUpPassword" name="signUpPassword" size="60" required><br><br>
                     <input type="submit" value="Register">
                 </form>
             </fieldset>
