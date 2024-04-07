@@ -1,6 +1,14 @@
 <?php
     session_start();
+    if (isset($_COOKIE["user"])) {
+        unset($_COOKIE["user"]);
+        setcookie("user", "", -1, "/");
+    }
 
+    if (!isset($_SESSION["username"])) {
+        header("Location: index.php");
+        exit;
+    }
     if (isset($_GET['reset']) && $_GET['reset'] == 'true') {
         // Clear the game state
         unset($_SESSION['wrongGuesses']);
@@ -25,6 +33,14 @@
                 exit;
         }
     }
+
+    if (isset($_POST["signOut"])) {
+        unset($_SESSION["username"]);
+        session_destroy();
+        session_write_close();
+        header("Location: index.php");
+        exit;
+    }
 ?>
 
 
@@ -47,6 +63,10 @@
                 <a href="game.php?level=medium"><button id="medium">MEDIUM</button></a>
                 <br>
                 <a href="game.php?level=hard"><button id="hard">HARD</button></a>
+                <br>
+                <form action="./main_menu.php" method="post">
+                    <input type="submit" name="signOut" value="Sign Out">
+                </form>
             </div>
         </div>
     </body>

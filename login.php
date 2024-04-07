@@ -25,6 +25,7 @@
                     $user = explode(",", $user[$index]);
                     if ($username == $user[0] and $password == $user[1]) {
                         $_SESSION["username"] = $username;
+                        setcookie("user", $_SESSION["username"], time() + (86400 * 30), "/");
                         header("Location: main_menu.php");
                         exit();
                     }
