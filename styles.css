@@ -1,7 +1,9 @@
 body{
-    background-color:rgb(178, 222, 227);
-    width: auto;
-    height: 100%;
+    background-image: url('https://i.pinimg.com/originals/0a/9b/65/0a9b65c27cdbac4d4c37e48ffa3fdb8c.jpg');
+    background-size: cover; 
+    background-position: center center; 
+    background-repeat: no-repeat; 
+    background-attachment: fixed;
 }
 div.center{
     margin: 0px;
@@ -81,6 +83,93 @@ button:hover{
     background-color:blueviolet;
 }
 
-#guessBox{
+#menu {
     display: flex;
+    justify-content: center; 
+    width: 100%;
+}
+
+#selection {
+    margin: auto; 
+    display: flex;
+    flex-direction: column; 
+    align-items: center; 
+}
+
+button {
+    margin: 5px 0; 
+}
+
+.game-container {
+    display: flex;
+    justify-content: center; 
+    align-items: center;
+    height: 100vh;
+}
+
+.game-area {
+    display: flex;
+    flex-direction: row; 
+    align-items: flex-start;
+    gap: 20px; 
+    max-width: 1200px; 
+    width: 100%; 
+}
+
+#image {
+    flex-basis: 50%; 
+    display: flex;
+    justify-content: center; 
+    align-items: center;
+}
+
+#image img {
+    margin-top: -130px;
+    max-width: 100%;
+    height: auto;
+    object-fit: contain; 
+}
+
+#wordBoard, .letter-buttons, a {
+    flex-basis: 50%; 
+}
+
+#wordBoard {
+    margin: 27px;
+    text-align: center;
+    font-size: 35px;
+    font-weight: bold;
+    margin-top: 100px;
+}
+
+.letter-buttons {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    grid-gap: 10px;
+    justify-content: center;
+}
+
+.letter-form button {
+    width: 100%;
+    padding: 10px;
+}
+
+a {
+    display: block; 
+    margin-top: 20px;
+}
+
+.letterAndReturn {
+    margin-top: 30px;
+    display: flex;
+    flex-direction: column; 
+    justify-content: center; 
+    align-items: center; 
+    height: 100%; 
+}
+
+.letterAndReturn p{
+    font-size: 30px;
+    color: black;
+    font-weight: bold;
 }

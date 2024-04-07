@@ -1,4 +1,13 @@
 <?php
+    session_start();
+
+    if (isset($_GET['reset']) && $_GET['reset'] == 'true') {
+        // Clear the game state
+        unset($_SESSION['wrongGuesses']);
+        unset($_SESSION['guessedLetters']);
+        unset($_SESSION['selectedWord']);
+    }
+    
     if (isset($_GET['level'])) {
         $level = $_GET['level'];
         switch ($level) {
