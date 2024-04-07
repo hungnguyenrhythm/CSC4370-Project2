@@ -43,9 +43,6 @@ function incrementScore($user){
 		array_push($new_userList, $modifiedData);
 	}
 	$dict[$userInfo[0]]=$userInfo[2];
-	var_dump($raw_userList);
-	echo "<br><br>";
-	var_dump($new_userList);
 	for($line = 0; $line < count($new_userList); $line++){
 		$new_userList[$line] .= "\n";
 	}
