@@ -77,6 +77,7 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+    <h1>HANGMAN WORD GAME</h1>
     <div class="game-container"> 
         <div class="game-area">
             <div id="image">

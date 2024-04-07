@@ -124,6 +124,7 @@ button {
 }
 
 #image img {
+    margin-top: -130px;
     max-width: 100%;
     height: auto;
     object-fit: contain; 
@@ -134,68 +135,11 @@ button {
 }
 
 #wordBoard {
-    font-size: 24px;
-    margin: 20px 0;
+    margin: 27px;
     text-align: center;
-}
-
-.letter-buttons {
-    display: grid;
-    grid-template-columns: repeat(6, 1fr);
-    grid-gap: 10px;
-    justify-content: center;
-}
-
-.letter-form button {
-    width: 100%;
-    padding: 10px;
-}
-
-a {
-    display: block; 
-    margin-top: 20px;
-}
-
-
-.game-container {
-    display: flex;
-    justify-content: center; 
-    align-items: center; 
-    height: 100vh; 
-}
-
-.game-area {
-    display: flex;
-    flex-direction: row; 
-    align-items: flex-start; 
-    gap: 20px;
-    max-width: 1200px; 
-    width: 100%; 
-}
-
-#image {
-    flex-basis: 50%; 
-    display: flex;
-    justify-content: center; 
-    align-items: center; 
-}
-
-#image img {
-    max-width: 100%;
-    height: auto;
-    object-fit: contain; 
-}
-
-#wordBoard, .letter-buttons, a {
-    flex-basis: 50%;
-}
-
-#wordBoard {
-    font-size: 24px;
-    margin: 20px 0;
-    text-align: center;
-    margin-top: 160px;
-    font-size: 50px;
+    font-size: 35px;
+    font-weight: bold;
+    margin-top: 100px;
 }
 
 .letter-buttons {
@@ -216,7 +160,7 @@ a {
 }
 
 .letterAndReturn {
-    margin-top: 90px;
+    margin-top: 30px;
     display: flex;
     flex-direction: column; 
     justify-content: center; 
