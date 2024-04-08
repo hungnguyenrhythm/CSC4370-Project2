@@ -64,6 +64,7 @@
                 <br>
                 <a href="game.php?level=hard"><button id="hard">HARD</button></a>
                 <br>
+                <a href="leaderboard.php"><button>Leaderboard</button></a>
                 <form action="./main_menu.php" method="post">
                     <input type="submit" name="signOut" value="Sign Out">
                 </form>

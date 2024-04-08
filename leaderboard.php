@@ -1,7 +1,12 @@
 <?php
+session_start();
+if (!isset($_SESSION["addScore"])) {
+	$_SESSION["addScore"] = $_SESSION["score"];
+} else {
+	unset($_SESSION["addScore"]);
+}
 function generate(){
-	$file = file_get_contents("users.txt");
-	$raw_userList = explode("\n", $file);
+	$raw_userList = file("./users.txt", FILE_IGNORE_NEW_LINES);
 	$dict = [];
 	foreach($raw_userList as $userData){
 		$userInfo = explode(",", $userData);
@@ -27,15 +32,14 @@ function generate(){
 	echo "</table>";
 }
 function incrementScore($user){
-	$file = file_get_contents("users.txt");
-	$raw_userList = explode("\n", $file);
+	$raw_userList = file("./users.txt", FILE_IGNORE_NEW_LINES);
 	$new_userList = [];
 	foreach($raw_userList as $userData){
 		$userInfo = explode(",", $userData);
 		$dict[$userInfo[0]]=$userInfo[2];
 		$modifiedData = "";
 		if($userInfo[0] == $user){
-			$userInfo[2] = strval(intval($userInfo[2]) + 1);
+			$userInfo[2] = strval(intval($userInfo[2]) + $_SESSION["addScore"]);
 			$modifiedData = $userInfo[0] . "," . $userInfo[1] . "," .$userInfo[2];
 		} else{
 			$modifiedData = $userData;
@@ -49,7 +53,7 @@ function incrementScore($user){
 	file_put_contents("users.txt", $new_userList);
 }
 
-# incrementScore("User");
+incrementScore($_SESSION["username"]);
 ?>
 
 <!DOCTYPE html>
@@ -64,7 +68,5 @@ function incrementScore($user){
 		<?php
 		generate();
 		?>
-		<button>Test</button>
-
 	</body>
 </html>
