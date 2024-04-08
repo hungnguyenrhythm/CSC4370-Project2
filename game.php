@@ -65,7 +65,6 @@
         $score++;
         $_SESSION['score'] = $score;
         setcookie('score', $score, time() + (86400 * 30), "/"); // Expires in 30 days
-        session_destroy();
     }
 ?>
 
