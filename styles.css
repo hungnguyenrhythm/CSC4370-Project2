@@ -173,3 +173,16 @@ a {
     color: black;
     font-weight: bold;
 }
+table {
+    position: absolute;
+    width: 50%;
+    left: 25%;
+    top: 25%;
+    height: 50%;
+    justify-content: center;
+    font-size: larger;
+}
+td {
+    text-align: center;
+    color: rgb(231, 180, 86);
+}
